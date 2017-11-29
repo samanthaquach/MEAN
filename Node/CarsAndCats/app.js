@@ -1,6 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 
+
 const server = http.createServer((request, response) => {
     console.log(`Client request URL: ${request.url}`);
 
