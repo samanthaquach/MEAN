@@ -2,6 +2,7 @@ var express = require('express'),
     path = require('path'),
     bp = require('body-parser'),
     app = express(),
+    session = require('express-session'),
     port = 8000;
 
 app.use(bp.urlencoded({
@@ -15,5 +16,5 @@ require('./server/config/mongoose');
 require('./server/config/routes')(app);
 
 app.listen(port, function () {
-    console.log("Yo meng, you're listening on " + port);
+    console.log("Yo, you're listening on " + port);
 });
