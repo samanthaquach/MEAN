@@ -12,9 +12,9 @@ module.exports = (function () {
 
         Login: function (req, res) {
             User.findOne({
-                email: req.params.email
+                email: req.body.email
             }, function (err, person) {
-                // request.session = request.session.id;
+                request.session.CurrentUser = User.email;
                 res.render('new', { person: person });
             });
         },
