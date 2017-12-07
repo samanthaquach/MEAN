@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <div class="subdiv">
+    <h4><button (click)="onButtonClick($event)">PST</button></h4>
+  </div>
+  <div class="subdiv">
+    <h4><button>MST</button></h4>
+  </div>
+  <div class="subdiv">
+    <h4><button>CST</button></h4>
+  </div>
+  <div class="subdiv">
+    <h4><button>EST</button></h4>
+  </div>
+  <div class="subdiv">
+    <h4><button>CLEAR</button></h4>
+  </div>
+
+  <h3>{{ date | date:'medium' }}</h3>
+
+
+
+</div>
+

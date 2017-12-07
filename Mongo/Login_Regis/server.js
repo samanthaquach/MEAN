@@ -3,12 +3,19 @@ var express = require('express'),
     bp = require('body-parser'),
     app = express(),
     session = require('express-session'),
+    mongoose = require("mongoose"),
     port = 8000;
 
 app.use(bp.urlencoded({
     extended: true
 }));
 app.use(express.static(path.join(__dirname, './client/static')));
+app.use(session({
+    secret: 'frenchbulldogs',
+    resave: true,
+    saveUninitialized: true
+}));
+
 app.set('views', path.join(__dirname, './client/views'));
 app.set('view engine', 'ejs');
 
