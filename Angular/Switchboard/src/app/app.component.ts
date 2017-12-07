@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Switch Board';
-  myArray: Array<string> = ['on', 'off', 'on', 'off', 'on', 'off', 'on', 'off', 'on','off']
-  switch: boolean = true;
+  switches = [true, true, true, true, true, true, true, true, true, true]
+  flipSwitch(idx){
+    this.switches[idx] = !this.switches[idx];
+  }
+
 }
+

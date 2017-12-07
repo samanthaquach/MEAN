@@ -2,9 +2,9 @@
 
 <div style="text-align:center">
   <h1>{{ title }}</h1>
-  <div class="thisDiv" *ngFor="let one of myArray">
-    <button (click)="onButton('switch')" [ngClass]="{'on':switch, 'off':switch}">{{ one }} </button>
-  </div>
+  <div class="thisDiv" *ngFor="let switch of switches; let idx = index">
+    <button *ngIf="switch" (click)="flipSwitch(idx)" [ngClass]="{'on':switch}"> ON </button>
+    <button *ngIf="!switch" [ngClass]="{'on': switch}" (click)="flipSwitch(idx)"> OFF </button>
+  </div><br><br>
 </div>
-
 
