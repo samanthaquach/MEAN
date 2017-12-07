@@ -1,0 +1,25 @@
+.thisDiv{
+    vertical-align: top;
+    display: inline-block;
+    background: brown;
+    
+}
+button{
+    width: 60px;
+    height: 60px;
+}
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: green;
+}
+
+.on{
+    background-color: green;
+}
+
+/* .off{
+    background-color: red;
+} */

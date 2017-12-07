@@ -4,19 +4,19 @@
     {{ title }}
   </h1>
   <div class="subdiv">
-    <h4><button (click)="onButtonClick($event)">PST</button></h4>
+    <h4><button (click)="onButton('PST')" ng-class="{'active-button'}">PST</button></h4>
   </div>
   <div class="subdiv">
-    <h4><button>MST</button></h4>
+    <h4><button (click)="onButton('MST')" ng-class="{'active-button'}">MST</button></h4>
   </div>
   <div class="subdiv">
-    <h4><button>CST</button></h4>
+    <h4><button (click)="onButton('CST')" ng-class="{'active-button'}">CST</button></h4>
   </div>
   <div class="subdiv">
-    <h4><button>EST</button></h4>
+    <h4><button (click)="onButton('EST')" ng-class="{'active-button'}">EST</button></h4>
   </div>
   <div class="subdiv">
-    <h4><button>CLEAR</button></h4>
+    <h4><button button (click)="onButtonCLEAR('CLEAR')">CLEAR</button></h4>
   </div>
 
   <h3>{{ date | date:'medium' }}</h3>

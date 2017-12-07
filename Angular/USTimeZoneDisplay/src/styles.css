@@ -12,3 +12,11 @@ button{
     display: inline-block;
     vertical-align: top;
 }
+
+button active {
+    background: blue;
+}
+
+.active-button{
+  background-color:green;
+}

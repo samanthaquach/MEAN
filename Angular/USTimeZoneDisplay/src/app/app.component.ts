@@ -8,7 +8,23 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'US Time Zone Display';
   date = new Date();
-  onButtonClick(event) {
-    console.log(`Click event is working`, event);
+  lastTimeZoneSelected = null;
+
+  onButton(timezone) {
+  this.date = new Date();
+  if (timezone === 'CST') {
+    this.date;
+  } else if (timezone === 'CST') {
+    this.date.setHours(this.date.getHours() + 2);
+  } else if (timezone === 'MST') {
+    this.date.setHours(this.date.getHours() - 1);
+  }
+    else if (timezone === 'PST') {
+    this.date.setHours(this.date.getHours() - 2);
+  }
+    else if (timezone === 'EST') {
+    this.date.setHours(this.date.getHours() + 1);
+  }
+  this.lastTimeZoneSelected = timezone;
   }
 }
