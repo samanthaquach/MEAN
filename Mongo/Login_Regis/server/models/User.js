@@ -10,7 +10,7 @@ var UserSchema = new mongoose.Schema({
     first_name: {
         type: String,
         minlength: 1,
-        requited: [true, "first name cannot be empty!"],
+        required: [true, "first name cannot be empty!"],
         trim: true
     },
     last_name: {
