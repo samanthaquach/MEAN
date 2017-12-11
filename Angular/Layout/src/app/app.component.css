@@ -1,0 +1,10 @@
+/* .wrapper{
+    width: 1000px;
+} */
+.content{
+    width: 1000px;
+    /* background: yellow; */
+    vertical-align: top;
+    display: inline-block;
+    
+}

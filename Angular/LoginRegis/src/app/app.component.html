@@ -92,4 +92,8 @@
         </div>
         {{ user | json }}
     </form>
+    <div>
+      <p *ngIf="submitted">Thank you for registering, {{ submitted.name }}! We just sent you a confirmation email at {{ user.email }}, and we will send
+        all mail to {{ submitted.address }}, {{ submitted.city }}, {{ submitted.state }}. Have a wonderful day!</p>
+    </div>
   </div>

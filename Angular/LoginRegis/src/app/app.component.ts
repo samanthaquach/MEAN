@@ -13,10 +13,15 @@ export class AppComponent {
   title = "Welcome";
   user = new UserComponent();
   users = [];
+  submitted;
+  // submitted = false;
 
   onSubmit(model: UserComponent, isValid: boolean) {
     console.log(this.user, isValid);
     this.users.push(this.user);
+    this.submitted = this.user;
     this.user = new UserComponent();
+    // this.submitted = true;
+    
   }
 }
