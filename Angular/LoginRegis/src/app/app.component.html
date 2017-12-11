@@ -1,0 +1,95 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}!
+  </h1>
+  <div class="form">
+    <form #myForm="ngForm" novalidate (submit)="onSubmit(f.value, f.valid)">
+    <!-- <form (submit)="onSubmit()"> -->
+        <label value="Email">Email</label>
+        <input 
+          type="text" 
+          name="email"
+          required
+          minlength="4"
+          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+          [(ngModel)]="user.email"
+          #email="ngModel"
+        >
+        <small [hidden]="email.valid || (email.pristine && !myForm.submitted)">
+          Email is required and format should be
+          <i>john@doe.com</i>.
+        </small>
+        <div class="validwords" *ngIf="email.valid">{{ user.email }} is valid!</div>
+        <label value="Name">Name</label>
+        <input 
+          type="text" 
+          name="name"
+          required
+          minlength="1"
+          [(ngModel)]="user.name"
+          #name="ngModel"
+        >
+        <!-- <div class="validwords" *ngIf="name.valid">Your name seems cool..</div> -->
+        <label value="Address">Address</label>
+        <input 
+          type="text" 
+          name="address"
+          required
+          minlength="1"
+          [(ngModel)]="user.address"
+          #address="ngModel"
+        >
+        <label value="City">City</label>
+        <input 
+          type="text" 
+          name="city"
+          required
+          minlength="1"
+          [(ngModel)]="user.city"
+          #address="ngModel"
+        ><br>
+        <label value="State">State</label>
+        <select name="state">
+          <option value="volvo">IL</option>
+          <option value="saab">NY</option>
+          <option value="mercedes">TX</option>
+          <option value="audi">WA</option>
+        </select><br>
+        <label value="Password">Password</label>
+          <input 
+            type="password" 
+            name="password" 
+            required 
+            minlength="3" 
+            maxlength="24"
+            [(ngModel)]="user.password"
+            #password='ngModel'
+          />
+          <small [hidden]="password.valid || (password.pristine && !myForm.submitted)">
+             Password is required
+          </small>
+          <label value="Password">Confirm</label>
+          <input 
+            type="password" 
+            name="confirmPassword" 
+            required 
+            match-password="password"
+            validateEqual="password"
+            [(ngModel)]="user.confirmPassword"
+            #confirmPassword='ngModel'
+          />
+          <small [hidden]="confirmPassword.valid ||  (confirmPassword.pristine && !myForm.submitted)">
+            Password mismatch
+          </small>
+        <!-- <div class="validwords" *ngIf="password.valid">Password seems legit...</div> -->
+        <button *ngIf="!myForm.valid" disabled>Submit</button>
+        <button type="submit" *ngIf="myForm.valid">Submit</button>
+        <!-- <input type="submit"> -->
+        <div>
+          <!-- <p>{{ email.errors | json }} {{ email.valid | json }}</p> -->
+          <!-- <p>{{ confirmPassword.errors | json }} {{ confirmPassword.valid | json }} </p> -->
+        </div>
+        {{ user | json }}
+    </form>
+  </div>
