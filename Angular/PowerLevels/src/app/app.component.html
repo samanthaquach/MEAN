@@ -1,0 +1,51 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="wrapper">
+  
+  <div class="wrappertitle">
+    {{ title }}
+  </div>
+  <div class="header">
+    <div class="title">
+      <h2>Initial Power Level:</h2>
+    </div>
+    <form #PowerForm="ngForm" (submit)="ngOnInit()">
+      <input type="number" max="100" min="0" name="power" [(ngModel)]="powerlevel">
+      <input type="submit" value="calculate powers">
+    </form>
+  </div>
+  <img src="../../assets/Goku.jpg" alt="" width="80">
+  <div class="superpower">
+      <div class="power">
+        <p>Human</p>
+        <app-human [myhuman]="powerlevel"></app-human>
+      </div>
+      <div class="power">
+        <p>Saiyan</p>
+        <app-saiyan [saiyan]="powerlevel"></app-saiyan>
+      </div>
+      <div class="power">
+        <p>Super Saiyan</p>
+        <app-super-saiyan [supersaiyan]="powerlevel"></app-super-saiyan>
+      </div>
+  <div class="superpower2">
+      <div class="power">
+          <p>Super Saiyan Two</p>
+          <app-super-saiyan2 [supersaiyan2]="powerlevel"></app-super-saiyan2>
+        </div>
+        <div class="power">
+          <p>Super Saiyan Three</p>
+          <app-super-saiyan3 [supersaiyan3]="powerlevel"></app-super-saiyan3>
+        </div>
+        <div class="power">
+          <p>Super Saiyan Four</p>
+          <app-super-saiyan4 [supersaiyan4]="powerlevel"></app-super-saiyan4>
+        </div>
+    </div>
+  </div> 
+  <br>
+  <br>
+</div>
+
+
+

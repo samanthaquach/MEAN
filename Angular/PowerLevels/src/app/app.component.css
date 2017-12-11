@@ -1,0 +1,55 @@
+.wrapper{
+    width: 960px;
+    border: 1px black solid;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+.wrappertitle{
+    margin-top: -28px;
+    background: white;
+    width: 120px;
+
+}
+form{
+    display: inline-block;
+    vertical-align: top;
+}
+.header{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
+}
+.title{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: -25px;
+}
+.superpower{
+    padding-top: 50px;
+    display: inline-block;
+    vertical-align: top;
+}
+.superpower2{
+    padding-top: 50px;
+    display: inline-block;
+    vertical-align: top;
+}
+.power{
+    padding-left: 10px;
+    border: 1px black solid;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+
+}
+p{
+    width: 100px;
+    margin-top: -10px;
+    background: white;
+}
+img{
+    /* float: right; */
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 100px;
+}
