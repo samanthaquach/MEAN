@@ -1,0 +1,35 @@
+<div  class="wrapper">
+  <div class="header">
+    <h1>
+      {{ title }}
+    </h1>
+  </div>
+  <form #myForm="ngForm"  novalidate (submit)="onSubmit(myForm)">
+    <textarea
+    [(ngModel)]="newQuote.body"
+    rows="4" 
+    cols="50" 
+    name="quote"
+    required 
+    minlength="4"
+    [(ngModel)]="quote.quote"
+    #quote="ngModel"
+    ></textarea><br>
+    <input
+    [(ngModel)]="newQuote.author"
+    type="text" 
+    name="quote"
+    required
+    minlength="1"
+    [(ngModel)]="quote.author"
+    #author="ngModel"
+    ><br>
+    <button *ngIf="!myForm.valid" disabled>Submit</button>
+    <button type="submit" *ngIf="myForm.valid">Submit</button>
+  </form>
+     {{ author.errors | json }} {{ author.valid | json }}<br>
+     {{ quote.errors | json }} {{ quote.valid | json }}<br>
+     <!-- {{ quote | json }} -->
+
+
+</div>

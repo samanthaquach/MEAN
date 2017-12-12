@@ -1,0 +1,47 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div  class="wrapper">
+  <div class="header">
+    <h1>
+      {{ title }}
+    </h1>
+  </div>
+  <form #myForm="ngForm"  novalidate (submit)="onSubmit(myForm)">
+    <textarea
+    rows="4" 
+    cols="50" 
+    name="quote"
+    required 
+    minlength="4"
+    [(ngModel)]="newQuote.quote"
+    #quote="ngModel"
+    ></textarea><br>
+    <input
+    type="text" 
+    name="author"
+    required
+    minlength="1"
+    [(ngModel)]="newQuote.author"
+    #author="ngModel"
+    ><br>
+    <button *ngIf="!myForm.valid" disabled>Submit</button>
+    <button type="submit" *ngIf="myForm.valid">Submit</button>
+  </form>
+     {{ author.errors | json }} {{ author.valid | json }}<br>
+     {{ quote.errors | json }} {{ quote.valid | json }}<br>
+     {{ newQuote | json }}
+  <br>
+  <div>
+    <p *ngIf="submitted"> {{ submitted.quote }} by {{ submitted.author }}</p>
+  </div>
+  <!-- <h1>Quotes List</h1>
+  <div class='quote' *ngFor="Let quote of quotes">
+    <div class='content'>
+      <p>{{quote.quote}}</p>
+      <span>- {{quote.author}}</span>
+    </div>
+  </div> -->
+
+
+</div>
+
+
