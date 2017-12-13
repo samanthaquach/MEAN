@@ -1,0 +1,9 @@
+<h1>Product List</h1>
+<ul>
+  <li *ngFor="let item of Products">
+    {{ item.title }}
+    {{ item.price }}
+    {{ item.image }}
+    <a [routerLink]="['edit', item.title]"><button>Edit</button></a>
+  </li>
+</ul>

@@ -1,0 +1,38 @@
+<p>it works!</p>
+<hr>
+<form #myForm="ngForm" novalidate (submit)="onSubmit(myForm.value, myForm.valid)">
+  <label value="Title">Title</label>
+  <input 
+  type="text" 
+  name="title" 
+  required minlength="4" 
+  [(ngModel)]="newProduct.title"
+  #title="ngModel">
+  <small [hidden]="title.valid || (title.pristine && !myForm.submitted)">
+    Title has to be 4 characters minimum.
+  </small>
+  <br>
+  <br>
+  <label value="price">Price</label>
+  <input 
+  type="number" 
+  name="price" 
+  required minlength="1" 
+  [(ngModel)]="newProduct.price" 
+  #price="ngModel">
+  <br>
+  <br>
+  <label value="image">Image</label>
+  <input 
+  type="file" 
+  name="image" 
+  [(ngModel)]="newProduct.image" 
+  #image="ngModel">
+  <br>
+  <br>
+  <button *ngIf="!myForm.valid" disabled>Update</button>
+  <button type="submit" *ngIf="myForm.valid">Update</button>
+
+</form>
+
+{{ newProduct | json }}
