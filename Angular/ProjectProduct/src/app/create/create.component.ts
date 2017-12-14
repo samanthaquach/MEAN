@@ -30,10 +30,8 @@ export class CreateComponent implements OnInit {
 
   onSubmit(myForm, isValid: boolean) {
     console.log(this.newProduct);
-    // this.Products.push(this.newProduct); //creating duplicates so ignore.
     this._dataService.addProduct(this.newProduct);
     this.submitted = this.newProduct;
-    // this.newProduct = new Product(); 
     this.newProduct = {
       title: "",
       price: "",

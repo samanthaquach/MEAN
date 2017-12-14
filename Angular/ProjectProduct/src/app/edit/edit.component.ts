@@ -11,13 +11,15 @@ import { CreateComponent } from '../create/create.component';
 })
 export class EditComponent implements OnInit {
 
-  // products: Array<CreateComponent>;
-  newProduct = {
+  products: Array<string>;
+
+  editProduct = {
     title: "",
     price: "",
     image: "",
   }
   Products = [];
+  index = '';
 
   constructor(private _route: ActivatedRoute, private _dataService: DataService, private router: Router) {
     this._route.paramMap.subscribe(params => {
@@ -32,16 +34,20 @@ export class EditComponent implements OnInit {
   }
 
   onSubmit(myForm, isValid: boolean) {
-    console.log(this.newProduct);
-    // this.Products.push(this.newProduct); //creating duplicates so ignore.
-    this._dataService.addProduct(this.newProduct);
-    // this.newProduct = new Product(); 
-    this.newProduct = {
+    this.Products = this._dataService.retrieveProduct();
+    this._route.paramMap.subscribe(params => {
+      var CurrentProduct = this._dataService.retrieveSingleProduct(params.get('title'))
+      this.index = params.get('title')
+      console.log(CurrentProduct);
+    })
+    this._dataService.updateProducts(this.editProduct);
+    this.editProduct = {
       title: "",
       price: "",
       image: "",
     }
     console.log(this.Products);
     this.router.navigate(['/productlist']);
+  }
 
 }

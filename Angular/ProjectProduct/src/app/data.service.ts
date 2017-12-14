@@ -20,9 +20,11 @@ export class DataService {
     console.log(this.product);
   }
 
-  updateProducts(product: Array<CreateComponent>) {
-    this.productsObservable.next(product);
+  updateProducts(any) {
+    this.productsObservable.next(any);
   }
   
-
+  retrieveSingleProduct(title): Product {
+    return this.product[title];
+  }
 }
