@@ -27,8 +27,6 @@ export class DataService {
 
     retreiveAllnotes(newNotes) {
         this.allnotes.next(newNotes);
-        // this.allnotes = notes
-        // console.log('retreive note:', notes)
         console.log('retreive notes,', this.allnotes)
         return this.allnotes;
     }
