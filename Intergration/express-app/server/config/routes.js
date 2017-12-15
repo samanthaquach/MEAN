@@ -4,15 +4,6 @@ module.exports = function (app) {
     app.get('/', function (req, res) {
         User.index(req, res);
     });
-    // app.get('/New', function (req, res) {
-    //     User.New(req, res);
-    // });
-    // app.post('/CreateUser', function (req, res) {
-    //     User.createPerson(req, res);
-    // });
-    // app.post('/Login', function (req, res) {
-    //     User.Login(req, res);
-    // });
     app.get('/tasks', (request, response) => { /*…*/ })
     app.post('/tasks', (request, response) => { /*…*/ })
     app.post('/tasks', )

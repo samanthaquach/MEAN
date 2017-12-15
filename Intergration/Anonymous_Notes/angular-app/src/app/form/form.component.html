@@ -1,0 +1,21 @@
+
+<hr>
+<form #myForm="ngForm" novalidate (submit)="onSubmit(myForm.value, myForm.valid)">
+  <label value="Note">Note</label>
+  <input 
+  type="text" 
+  name="note" 
+  required minlength="3" 
+  [(ngModel)]="note.text"
+  #text="ngModel">
+  <small [hidden]="text.valid || (text.pristine && !myForm.submitted)">
+    Title has to be 3 characters minimum.
+  </small>
+  <br>
+  <br>
+  <button *ngIf="!myForm.valid" disabled>Create</button>
+  <button type="submit" *ngIf="myForm.valid">Create</button>
+
+</form>
+
+{{ note | json }}

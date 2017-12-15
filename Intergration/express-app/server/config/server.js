@@ -4,7 +4,7 @@ var express = require('express'),
     app = express(),
     session = require('express-session'),
     mongoose = require("mongoose"),
-    port = 8000;
+    port = 5000;
 
 app.use(bp.urlencoded({
     extended: true
